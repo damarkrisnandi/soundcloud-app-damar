@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Header from './components/Header';
+import Player from './components/Player';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      
+      <iframe id="sc" width="100%" height={`${ window.screen.height * 0.5 }`} scrolling="no" frameBorder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&amp;{ ADD YOUR PARAMETERS HERE }">
+      </iframe>
+
+      <Player />
     </div>
   );
 }
