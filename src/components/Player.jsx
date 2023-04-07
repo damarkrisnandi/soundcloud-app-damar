@@ -71,7 +71,7 @@ const Player = () => {
                         </div>
 
                     </div>
-                    <div className="text-xs font-thin">{ info ? info.description : '' }</div>
+                    <div className="text-sm font-thin">{ info ? info.user.username : '' }</div>
                 </div>
             )}
         </div>
