@@ -24,6 +24,10 @@ const Player = () => {
                 if (paused) {
                     isPaused(false);
                     window.SC.Widget(document.getElementById('sc')).play();
+                    window.SC.Widget(document.getElementById('sc')).getCurrentSound(function(currentSound) {
+                        console.log('sound ', currentSound, 'began to play');
+                        setInfo(currentSound);
+                    });
                 } else {
                     isPaused(true);
                     window.SC.Widget(document.getElementById('sc')).pause();
@@ -67,7 +71,7 @@ const Player = () => {
                         </div>
 
                     </div>
-                    <p className="text-xs font-thin">{ info ? info.description : '' }</p>
+                    <div className="text-xs font-thin">{ info ? info.description : '' }</div>
                 </div>
             )}
         </div>
