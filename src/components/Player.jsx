@@ -6,15 +6,11 @@ const Player = () => {
     const [info, setInfo] = useState(null);
     useEffect(() => {
         window.SC.Widget(document.getElementById('sc')).getCurrentSound(function(currentSound) {
-            console.log('sound ', currentSound, 'began to play');
             if (!info || !info.id) {
                 setInfo(currentSound);
             }
         });
 
-        window.SC.Widget(document.getElementById('sc')).isPaused(function(b) {
-            console.log(b);
-        });
     })
 
     const handlePlayOrPause = () => {
@@ -25,7 +21,6 @@ const Player = () => {
                     isPaused(false);
                     window.SC.Widget(document.getElementById('sc')).play();
                     window.SC.Widget(document.getElementById('sc')).getCurrentSound(function(currentSound) {
-                        console.log('sound ', currentSound, 'began to play');
                         setInfo(currentSound);
                     });
                 } else {
